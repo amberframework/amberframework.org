@@ -1,0 +1,33 @@
+{
+  "name": "amberframework",
+  "description": "Test App",
+  "scripts": {
+  },
+  "env": {
+    "AMBER_ENV": {
+      "required": true
+    },
+    "LOADERIO_API_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "loaderio",
+    "logentries",
+    "newrelic",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/amberframework/heroku-buildpack-amber.git"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+name: amberframework
+version: 0.1.0
+
+authors:
+  - Amber <amberframework.org>
+
+crystal: 0.24.1
+
+license: MIT
+
+targets:
+  amberframework:
+    main: src/amberframework.cr
+
+dependencies:
+  amber:
+    github: amberframework/amber
+    version: 0.6.7
+
+development_dependencies:
+  garnet_spec:
+    github: amberframework/garnet-spec
+    version: ~> 0.1.1
+

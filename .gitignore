@@ -1,0 +1,14 @@
+/doc/
+/lib/
+/.crystal/
+/.shards/
+/.vscode/
+/tmp/
+/log/
+/bin/
+.env
+.amber_secret_key
+.encryption_key
+.DS_Store
+node_modules
+.directory

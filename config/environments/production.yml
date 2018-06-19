@@ -1,0 +1,16 @@
+port: 8080
+name: amberframework.org
+logging:
+  severity: debug
+  colorize: false
+  filter:
+    - password
+    - confirm_password
+  skip:
+    -
+  context:
+    - request
+
+host: 0.0.0.0
+port_reuse: false
+process_count: 1

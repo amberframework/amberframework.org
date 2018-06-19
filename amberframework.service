@@ -1,0 +1,14 @@
+[Unit]
+Description=Run amberframework executable for amberframework.org website
+After=network.target
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/home/deploy/www/amberframework.org
+Environment="AMBER_ENV=production"
+ExecStart=/home/deploy/www/amberframework.org/bin/amberframework
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

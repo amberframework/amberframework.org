@@ -1,0 +1,89 @@
+#!/bin/bash
+
+# This file is a copy of production file .git/hooks/post-receive
+# Used to deploy on `git push production`
+
+set -e
+
+export PORT=80
+export AMBER_ENV=production
+
+if [ "$GIT_DIR" = "." ]; then
+  # The script has been called as a hook; chdir to the working copy
+  cd ..
+  unset GIT_DIR
+fi
+
+# try to obtain the usual system PATH
+if [ -f /etc/profile ]; then
+  PATH=$(source /etc/profile; echo $PATH)
+  export PATH
+fi
+
+# get the current branch
+head="$(git symbolic-ref HEAD)"
+
+# read the STDIN to detect if this push changed the current branch
+while read oldrev newrev refname
+do
+  [ "$refname" = "$head" ] && break
+done
+
+# abort if there's no update, or in case the branch is deleted
+if [ -z "${newrev//0}" ]; then
+  exit
+fi
+
+# check out the latest code into the working copy
+umask 002
+git reset --hard
+
+logfile=log/deploy.log
+
+if [ -z "${oldrev//0}" ]; then
+  # this is the first push; this branch was just created
+  mkdir -p log tmp bin
+  chmod 0775 log tmp bin
+  touch $logfile
+  chmod 0664 $logfile
+
+  # init submodules
+  git submodule update --recursive --init 2>&1 | tee -a $logfile
+else
+  # log timestamp
+  echo ==== $(date) ==== >> $logfile
+
+  ################################################################################
+  ####  BEGIN: Amberframework specific Code                                  #####
+  ################################################################################
+
+  shards install
+
+  if [ -f bin/amber ]; then
+    echo "amber already installed"
+  else
+    crystal build lib/amber/src/amber/cli.cr -o bin/amber --stats
+  fi
+
+  echo "Migrating..."
+  ./bin/amber db create migrate || true
+  echo "Building application in release mode"
+  crystal build src/amberframework.cr -o bin/amberframework --release --stats
+
+  systemctl status amberframework
+  sudo systemctl restart amberframework
+  systemctl status amberframework
+
+  ## Code below is NOT required, now we're using an amberframework.sevice at /etc/systemd/system
+
+  #old_pid=`cat tmp/amberframework.pid`
+  #echo "Killing old process..."
+  #kill -9 $old_pid || true # Move after start line if PORT_REUSE is on.
+  #echo "Starting application..."
+  #nohup ./bin/amberframework >> log/production.log 2>&1 & 
+  #echo $! > tmp/amberframework.pid
+
+  ################################################################################
+  ####  END: Amberframework specific Code                                    #####
+  ################################################################################
+fi

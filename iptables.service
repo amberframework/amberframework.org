@@ -1,0 +1,12 @@
+[Unit]
+Description=Redirect port 80 to port 8080 using iptables for amberframework.org website
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/bin/sh -c "iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080"
+ExecStartPost=/bin/sh -c "iptables -t nat --line-numbers -n -L"
+
+[Install]
+WantedBy=multi-user.target
