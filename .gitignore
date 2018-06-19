@@ -6,9 +6,9 @@
 /tmp/
 /log/
 /bin/
+/node_modules/
 .env
 .amber_secret_key
 .encryption_key
 .DS_Store
-node_modules
 .directory
