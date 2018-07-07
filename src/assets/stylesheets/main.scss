@@ -27,6 +27,10 @@ small {
     opacity: .9;
 }
 
+.topbar-nav {
+    line-height: 0 !important;
+}
+
 .topbar-nav .nav-link.active,
 .topbar-nav .nav-link:focus,
 .topbar-nav .nav-link:hover {
