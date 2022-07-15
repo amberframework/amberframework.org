@@ -1,5 +1,5 @@
 require "amber"
-require "markdown"
+require "markd"
 require "../src/controllers/application_controller"
 require "../src/controllers/**"
 

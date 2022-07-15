@@ -58,21 +58,21 @@
 
 .logo-box-bg-white-amber {
     min-height: 200px;
-    background-image: url(/assets/img/amber.png);
+    background-image: url('../public/assets/img/amber.png');
     background-size: 136px 200px;
     min-height: 500px;
 }
 
 .logo-box-bg-white {
     min-height: 200px;
-    background-image: url(/assets/img/amber-black.png);
+    background-image: url('../public/assets/img/amber-black.png');
     background-size: 136px 200px;
     height: 500px;
 }
 
 .logo-box-bg-black {
     min-height: 200px;
-    background-image: url(/assets/img/amber-white.png);
+    background-image: url('../public/assets/img/amber-white.png');
     background-size: 136px 200px;
     background-color: #000000;
     height: 500px;
@@ -80,7 +80,7 @@
 
 .logo-box-bg-amber {
     min-height: 200px;
-    background-image: url(/assets/img/amber-white.png);
+    background-image: url('../public/assets/img/amber-white.png');
     background-size: 136px 200px;
     background-color: $main-orange;
     height: 500px;

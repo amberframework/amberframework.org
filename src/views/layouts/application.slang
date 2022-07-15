@@ -11,7 +11,9 @@ html lang="en"
     link rel="apple-touch-icon" href="/favicon.png"
     link rel="icon" href="/favicon.png"
     link rel="icon" type="image/x-icon" href="/favicon.ico"
-
+    script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RER390YYB5"
+    == render_template "layouts/google_analytics.slang"
+    
   body
     == render_template "layouts/_nav.slang"
     == content
@@ -20,4 +22,4 @@ html lang="en"
     script src="/assets/js/core.min.js"
     script src="/dist/main.bundle.js"
     script async="" defer="" src="https://buttons.github.io/buttons.js"
-    == render_template "layouts/google_analytics.slang"
+    
