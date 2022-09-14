@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 let config = {
   entry: {
@@ -22,29 +22,21 @@ let config = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
+        use: ['css-loader']
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
-        })
+        use: ['css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        exclude: /node_modules/,
-        use: [
-          'file-loader?name=/img/[name].[ext]'
-        ]
+        test: /\.(png|svg|jpg|gif)$/i,
+        exclude: /node_modules/
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         exclude: /node_modules/,
+        type: 'asset/resource',
         use: [
           'file-loader'
         ]
@@ -53,14 +45,14 @@ let config = {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: ['es2015']
         }
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin('main.bundle.css'),
+    new MiniCssExtractPlugin(),
   ]
 };
 

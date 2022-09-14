@@ -4,7 +4,7 @@ version: 0.1.0
 authors:
   - Amber <amberframework.org>
 
-crystal: 0.24.1
+crystal: 1.5.0
 
 license: MIT
 
@@ -15,7 +15,9 @@ targets:
 dependencies:
   amber:
     github: amberframework/amber
-    version: 0.6.7
+    version: 1.2.2
+  markd:
+    github: icyleaf/markd
 
 development_dependencies:
   garnet_spec:
