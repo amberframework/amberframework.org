@@ -113,26 +113,26 @@ main.main-content
           | Crystal framework development. Amber is a community effort and we want you to join.
       .flexbox.flex-grow-all.text-center.mx-auto.amber-stats
         div
-          span.text-info.fs-50 30+
+          span.text-info.fs-50 50+
           br
           p
             a href="https://github.com/amberframework/amber/releases" target="_blank" Releases
               i.fa.fa-github
         div
-          span.text-info.fs-50 1000+
+          span.text-info.fs-50 2000+
           br
           p
             a href="https://github.com/amberframework/amber/stargazers" target="_blank" Stars
               i.fa.fa-star
         div
-          span.text-info.fs-50 900+
+          span.text-info.fs-50 1200+
           br
           p
             a href="https://github.com/amberframework/amber/graphs/contributors" target="_blank" Commits
               i.fa.fa-file-text
       br
 
-  section.section.text-center
+  /section.section.text-center
     .container
       header
         h3 Sponsors
@@ -150,5 +150,5 @@ main.main-content
               background-size: 100%;
             }
 
-          a#digitalocean href="https://digitalocean.com" target="_blank"
+          /a#digitalocean href="https://digitalocean.com" target="_blank"
             div alt="Hosting generously provided by Digital Ocean"
