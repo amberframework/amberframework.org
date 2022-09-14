@@ -8,7 +8,7 @@ footer.site-footer.py-30.bg-gray
           | Amber aims to deliver developer happiness, productivity and bare metal performance. It offers a familiar set of tools like generators, database management, repl, deployment tools, docker support and production tools like encrypted secrets.
         br
         p.text-light
-          | Copyright © 2019
+          | Copyright © 2022
           a href="https://amberframework.org"
             | Amber Framework
           | . All rights reserved.
@@ -26,12 +26,9 @@ footer.site-footer.py-30.bg-gray
           a.nav-link href="https://github.com/amberframework/" target="_blank"
             i.fa.fa-github
             | Source Code
-          a.nav-link href="https://gitter.im/amberframework/amber"  target="_blank"
+          a.nav-link href="https://discord.gg/vwvP5zakSn"  target="_blank"
             i.fa.fa-comments
-            | Gitter Channel
-          a.nav-link href="https://teespring.com/stores/amber-framework"  target="_blank"
-            i.fa.fa-shopping-basket
-            | Goodies
+            | Discord
       .col-12.col-md-6.col-lg-2
         h6.heading-alt.text-uppercase.fs-14.mb-3
           | Crystal Language

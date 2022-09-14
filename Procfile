@@ -1,1 +1,1 @@
-web: ./bin/amberframework -p $PORT
+web: nodemon --exec crystal run src/amberframework.cr --watch
