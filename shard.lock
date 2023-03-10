@@ -2,7 +2,7 @@ version: 2.0
 shards:
   amber:
     git: https://github.com/amberframework/amber.git
-    version: 1.2.2
+    version: 1.3.2
 
   amber_router:
     git: https://github.com/amberframework/amber-router.git
@@ -10,7 +10,7 @@ shards:
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
-    version: 1.2.1
+    version: 1.2.2
 
   callback:
     git: https://github.com/amberframework/callback.git
@@ -78,11 +78,11 @@ shards:
 
   pool:
     git: https://github.com/ysbaddaden/pool.git
-    version: 0.2.4
+    version: 0.3.0
 
   redis:
     git: https://github.com/stefanwille/crystal-redis.git
-    version: 2.7.0
+    version: 2.8.3
 
   selenium:
     git: https://github.com/ysbaddaden/selenium-webdriver-crystal.git
