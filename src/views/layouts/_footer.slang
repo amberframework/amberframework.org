@@ -8,7 +8,7 @@ footer.site-footer.py-30.bg-gray
           | Amber aims to deliver developer happiness, productivity and bare metal performance. It offers a familiar set of tools like generators, database management, repl, deployment tools, docker support and production tools like encrypted secrets.
         br
         p.text-light
-          | Copyright © 2022
+          | Copyright © 2023
           a href="https://amberframework.org"
             | Amber Framework
           | . All rights reserved.

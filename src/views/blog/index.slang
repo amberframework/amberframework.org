@@ -17,7 +17,7 @@ main
           li
             p = post["date"]
               | by
-              a href="#{post["profile"]}"
+              a href="#{post["profile"]}" target="_blank"
                 = post["author"]
             h2
               a.text-light-dark href="/#{post["file"].to_s.sub(/.md$/, "")}"
