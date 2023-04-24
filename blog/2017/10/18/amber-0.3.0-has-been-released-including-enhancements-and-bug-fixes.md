@@ -16,6 +16,6 @@ remove static controller [#287](https://github.com/amberframework/amber/pull/287
 - Change a litte typo from Crystal to Framwork [#284](https://github.com/amberframework/amber/pull/284) by [@papilip](https://github.com/papilip)
 - Only apply optional rule if param is present and pass otherwise [#283](https://github.com/amberframework/amber/pull/283) by [@sgargan](https://github.com/sgargan)
 
-Feel free to [contribute](https://github.com/amberframework) or share us a [message](https://gitter.im/amberframework/amber).
+Feel free to [contribute](https://github.com/amberframework) or share us a [message on discord](https://discord.gg/vwvP5zakSn).
 
 Also check [@amberframework](https://twitter.com/amberframework) at Twitter.
