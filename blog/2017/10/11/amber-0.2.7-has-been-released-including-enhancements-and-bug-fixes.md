@@ -8,6 +8,6 @@
 - Add reference field type to scaffolding [#268](https://github.com/amberframework/amber/pull/268) by [@drujensen](https://github.com/drujensen)
 - Webpack settings improvements [#253](https://github.com/amberframework/amber/pull/253) by [@fridgerator](https://github.com/fridgerator)
 
-Feel free to [contribute](https://github.com/amberframework) or share us a [message](https://gitter.im/amberframework/amber).
+Feel free to [contribute](https://github.com/amberframework) or share us a [message on discord](https://discord.gg/vwvP5zakSn).
 
 Also check [@amberframework](https://twitter.com/amberframework) at Twitter.

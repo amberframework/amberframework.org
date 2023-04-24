@@ -8,7 +8,7 @@ With the start of the new year, the core team would like to communicate the visi
 ## Vision
 The vision is for the framework to be a convergence of best practices - both from the community and existing frameworks & libraries.
 
-We invite the developer community as a whole to help us in identifying and implementing these best practices. Please chat with us on [gitter/irc](https://gitter.im/amberframework/amber), open [issues](https://github.com/amberframework/amber/issues), open [Pull Requests](https://github.com/amberframework/amber/pulls). The team maintains openness to suggestions and contributions, it is part of the [team’s philosophy](https://github.com/amberframework/amber#amber-philosophy-hrt).
+We invite the developer community as a whole to help us in identifying and implementing these best practices. Please chat with us on [discord](https://discord.gg/vwvP5zakSn), open [issues](https://github.com/amberframework/amber/issues), open [Pull Requests](https://github.com/amberframework/amber/pulls). The team maintains openness to suggestions and contributions, it is part of the [team’s philosophy](https://github.com/amberframework/amber#amber-philosophy-hrt).
 
 The vision will help meet some of the main goals of the project:
 - Create an approachable framework
