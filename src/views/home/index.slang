@@ -8,10 +8,10 @@ main.main-content
         p.lead
           | Amber provides the bare metal performance of the Crystal Language.
           br
-          | It provides productivity and happiness through a powerful CLI and familiar design patterns seen in Kemal, Rails, Phoenix and other popular frameworks.
+          | Amber makes developers happy and productive with its powerful tooling and design patterns seen in Kemal, Rails, Phoenix.
         hr
-        p 
-          | See how quickly you can get an Amber app up and running:
+        p
+          | Get an amber app up and running in minutes:
       .row
         .col-12.offset-md-2.col-md-8.mb-30
           .youtube-player data-id="nIHSuBhoYc0"
@@ -24,7 +24,7 @@ main.main-content
               h5
                 | Generators
               p
-                | Use code generation and scaffolding features to rapidly build prototypes.
+                | Don't want to write controller boilerplate? Generate it with a few keystrokes.
 
         .col-12.col-md-6.col-xl-4
           .flexbox.gap-items-4
@@ -45,8 +45,8 @@ main.main-content
               h5
                 | MVC Conventions
               p
-                | Instead of having to plan where things go, Amber comes with a
-                | set of conventions to guide you in developing your application.
+                | Instead of planning where things go, Amber comes with a
+                | set of conventions to you develop your app.
 
         .col-12.col-md-6.col-xl-4
           .flexbox.gap-items-4
@@ -56,9 +56,9 @@ main.main-content
               h5
                 | Build Secure Apps
               p
-                | Tools are built-in to prevent and mitigate common attacks against web applications.
-                | Minimize the risk of SQL injection, form tampering, cross-site request
-                | forgery, and several other attacks.
+                | Nobody likes being asked to handle a security issue at Friday 5:01PM.
+                | Amber is setup to prevent SQL injection, form tampering, cross-site request
+                | forgery, and a bunch of other attacks.
 
         .col-12.col-md-6.col-xl-4
           .flexbox.gap-items-4
@@ -78,7 +78,7 @@ main.main-content
               i.fa.fa-wrench.fs-25.pt-4.text-secondary
             div
               h5
-                | The Right Amount of Tooling
+                | Batteries Included
               p
                 | All of the tools you need are built-in: CLI, translations, database access, caching,
                 | validation, authentication, deployments, and encryption of secrets.
@@ -109,8 +109,8 @@ main.main-content
           | Community Driven
         hr
         p.lead
-          | Contributing to Amber can be a rewarding way to learn, teach, and build experience with
-          | Crystal framework development. Amber is a community effort and we want you to join.
+          | Contributing to Amber is a rewarding way to learn, teach, and build experience with
+          | Crystal framework development. Amber is a community effort and we want you to be a member!
       .flexbox.flex-grow-all.text-center.mx-auto.amber-stats
         div
           span.text-info.fs-50 50+
