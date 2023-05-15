@@ -24,7 +24,7 @@ main.main-content
               h5
                 | Generators
               p
-                | Don't want to write controller boilerplate? Generate it with a few keystrokes.
+                | Generate common code with a few keystrokes.
 
         .col-12.col-md-6.col-xl-4
           .flexbox.gap-items-4
