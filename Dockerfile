@@ -1,15 +1,64 @@
-FROM drujensen/crystal:0.23.1
+# FROM drujensen/crystal:0.23.1
+FROM amberframework/amber:1.3.2 AS development
 
-ENV AMBER_VERSION 0.2.7
+ARG AMBER_ENV=production
+ENV AMBER_ENV=${AMBER_ENV}
 
-RUN curl -L https://github.com/amberframework/amber/archive/v$AMBER_VERSION.tar.gz | tar xvz -C /usr/local/share/. && cd /usr/local/share/amber-$AMBER_VERSION && crystal deps && make
-
-RUN ln -s /usr/local/share/amber-$AMBER_VERSION/bin/amber /usr/local/bin/amber
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}}
 
 WORKDIR /app/user
 
 ADD . /app/user
 
-RUN crystal deps
+RUN npm install -g \ 
+        yarn
 
-CMD ["crystal", "spec"]
+RUN shards install
+
+EXPOSE 3000
+# CMD ["crystal", "spec"]
+CMD ["amber", "watch"]
+
+FROM amberframework/amber:1.3.2 AS builder
+
+ENV AMBER_ENV=production
+ENV NODE_ENV=production
+
+COPY --from=development /app/user /app/user
+
+WORKDIR /app/user
+
+RUN npm install --prod && \
+    npm run release && \
+    shards install --production && \
+    shards build amberframework --release
+
+
+##
+# Production stage
+##
+FROM bitnami/minideb AS production
+
+ENV AMBER_ENV=production
+# ENV AMBER_HOST=0.0.0.0
+# ENV AMBER_PORT=8080
+ENV NODE_ENV=production
+
+# RUN apt update && \
+#     apt install -y libyaml-0-2
+
+COPY --from=builder /usr/lib/x86_64-linux-gnu/*libyaml* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/*libssl* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/*libcrypto* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/*libpcre* /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/*libevent* /usr/lib/x86_64-linux-gnu/
+
+COPY --from=builder /app/user/blog /app/user/blog
+COPY --from=builder /app/user/config /app/user/config
+COPY --from=builder /app/user/public /app/user/public
+COPY --from=builder /app/user/bin/amberframework /app/user/bin/amberframework
+
+WORKDIR /app/user
+
+CMD [ "bash", "-c", "bin/amberframework" ]
