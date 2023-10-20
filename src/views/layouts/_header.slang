@@ -14,7 +14,7 @@ header.header.header-inverse.h-fullscreen.p-0.bg-primary.overflow-hidden.orange-
           br
           | Get started with blazing fast performance.
           br
-          | Latest release: v1.3.2 - 11/8/2022
+          | Latest release: #{@latest_amber_version} - #{@latest_amber_release_date}
         br
         a.btn.btn-lg.btn-round.shadow-3.btn-primary href="https://docs.amberframework.org/amber/getting-started" target="_blank"
           | Getting Started Guide
