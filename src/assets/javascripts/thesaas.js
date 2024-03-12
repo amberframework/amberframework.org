@@ -14,7 +14,6 @@
 
   thesaas.defaults = {
     googleApiKey: null,
-    googleAnalyticsId: null,
     smoothScroll: false,
   }
 
@@ -55,21 +54,6 @@
     // 
     if ($('[data-provide~="map"]').length && window["google.maps.Map"] === undefined) {
       $.getScript("https://maps.googleapis.com/maps/api/js?key=" + thesaas.defaults.googleApiKey + "&callback=thesaas.map");
-    }
-
-
-    // Google Analytics
-    //
-    if (thesaas.defaults.googleAnalyticsId) {
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-      ga('create', thesaas.defaults.googleAnalyticsId, 'auto');
-      ga('send', 'pageview');
     }
 
   }
