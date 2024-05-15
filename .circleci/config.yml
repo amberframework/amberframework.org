@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  run_tests:
+    docker:
+      - image: amberframework/amber:1.3.2
+    steps:
+      - checkout
+      - run:
+          name: Shards Install
+          command: |
+            echo "shards version: $(shards version)"
+            shards install
+      - run:
+          name: Crystal Spec
+          command: |
+            crystal -v
+            crystal spec
+workflows:
+  build_test:
+    jobs:
+      - run_tests

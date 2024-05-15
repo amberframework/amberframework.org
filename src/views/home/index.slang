@@ -113,19 +113,19 @@ main.main-content
           | Crystal framework development. Amber is a community effort and we want you to join.
       .flexbox.flex-grow-all.text-center.mx-auto.amber-stats
         div
-          span.text-info.fs-50 50+
+          span.text-info.fs-50 #{@amber_count_of_releases}+
           br
           p
             a href="https://github.com/amberframework/amber/releases" target="_blank" Releases
               i.fa.fa-github
         div
-          span.text-info.fs-50 2000+
+          span.text-info.fs-50 #{@amber_count_of_stargazers}+
           br
           p
             a href="https://github.com/amberframework/amber/stargazers" target="_blank" Stars
               i.fa.fa-star
         div
-          span.text-info.fs-50 1200+
+          span.text-info.fs-50 #{@amber_count_of_commits}+
           br
           p
             a href="https://github.com/amberframework/amber/graphs/contributors" target="_blank" Commits
