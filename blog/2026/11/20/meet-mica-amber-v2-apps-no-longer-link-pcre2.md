@@ -66,18 +66,23 @@ in about 0.03x of PCRE2's time and allocate 0 bytes per search.
 ## How fast it is
 
 We did not want to trade speed for safety, so the bar was PCRE2 with its JIT
-compiler turned on, which is how Crystal runs it. Over 479 benchmark cases in
-21 groups, Mica's geometric-mean times (a typical case, so no single outlier
-decides the result) compare like this:
+compiler turned on, which is how Crystal runs it. The benchmark has 479 cases
+in 21 groups. 112 of them are patterns built to make a regex engine hang, and
+PCRE2 struggles there, so we report everyday patterns on their own. These are
+geometric-mean times (a typical case, so no single outlier decides the result)
+over the 367 everyday patterns:
 
-| Measure | Mica | PCRE2-JIT | Mica's share of the time |
+| Measure | Mica | PCRE2-JIT | Mica is |
 |---|---|---|---|
-| Search with fresh text | 32.6 µs | 72.0 µs | 0.454x |
-| Compile a pattern | 3.03 µs | 4.55 µs | 0.665x |
-| First search of a new pattern | 31.5 µs | 82.8 µs | 0.381x |
-| First regex work after an app starts | 154.7 µs | 322.1 µs | 0.480x |
+| Search with fresh text | 101.3 µs | 153.5 µs | 1.5× as fast |
+| Compile a pattern | 3.2 µs | 4.6 µs | 1.4× as fast |
+| First search of a new pattern | 49.9 µs | 122.5 µs | 2.5× as fast |
+| First regex work after an app starts | 212.5 µs | 409.0 µs | 1.9× as fast |
 
-All 21 groups are at or under PCRE2-JIT on all four measures.
+On Amber's own patterns (routes, logs, CSV, templates) a search is 1.35× as
+fast, 556 µs against 750 µs. On the 112 hang-prone patterns Mica is 7× as fast
+and always stops on time. All 21 groups are at or under PCRE2-JIT on all four
+measures, though some single patterns are still slower.
 
 ## What is not done yet
 
