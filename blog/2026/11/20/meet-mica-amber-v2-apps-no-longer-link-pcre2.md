@@ -96,8 +96,9 @@ PCRE2-JIT. We are working through them one at a time.
 
 Mica's code, including the regex engine and its benchmarks, is public at
 [github.com/amberframework/mica](https://github.com/amberframework/mica).
-The regex engine is still under review there and is not yet part of a tagged
-Mica release.
+The regex engine ships in
+[Mica v0.2.0](https://github.com/amberframework/mica/releases/tag/v0.2.0),
+released November 21, 2026.
 
 To try the regex-free default app, install Amber CLI 2.0.11 and run
 `amber new`. Your app is now 31,760 bytes heavier and one C library lighter.
