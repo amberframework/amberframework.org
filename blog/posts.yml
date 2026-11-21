@@ -1,3 +1,25 @@
+title: "Meet Mica: Amber V2 Apps No Longer Link PCRE2"
+file: blog/2026/11/20/meet-mica-amber-v2-apps-no-longer-link-pcre2.md
+image: characters/amber-hero-original-studio.webp
+date: Nov 20, 2026
+author: Amber maintainers
+profile: https://github.com/amberframework
+category: Release
+character: Amber
+character_image: characters/amber-id-original-studio.webp
+summary: Amber 2.0.0-beta.11, Grant 0.24.0, asset_pipeline 0.38.0 and Amber CLI 2.0.11 make a default app that links no PCRE2, and Mica brings a pure-Crystal regex engine with a work budget and deadline on every search.
+---
+title: "Meet Mica and Beryl, Amber's Security Crew"
+file: blog/2026/11/20/meet-mica-and-beryl.md
+image: characters/amber-hero-inviting-studio.webp
+date: Nov 20, 2026
+author: Amber maintainers
+profile: https://github.com/amberframework
+category: Security
+character: Amber
+character_image: characters/amber-id-original-studio.webp
+summary: Mica reads everything that comes into an Amber app; Beryl decides who gets in and what they may do. Meet the two crew members who share security.
+---
 title: "Amber V2 Schemas Are Contracts the Framework Actually Enforces"
 file: blog/2026/08/13/amber-v2-executable-schema-contracts.md
 image: characters/amber-hero-original-studio.webp
